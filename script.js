@@ -7,7 +7,7 @@ function displayPopup() {
   const gridSize = parseInt(prompt("Please enter the number of squares you want for your grid (maximum 100):"));
   return (isNaN(gridSize) || gridSize <= 0 || gridSize > 100) ? alert("Please enter a valid number between 1 and 100.") : createGrid(gridSize);
 }
-  
+
 
 const container = document.querySelector("#container");
 
@@ -28,7 +28,7 @@ function createGrid(size) {
     gridItem.style.backgroundColor = "white";
     gridItem.style.border = "1px solid black";
     gridItem.style.boxSizing = "border-box";
-    gridItem.style.flex = "1 0 calc(100% / 16)"; 
+    gridItem.style.flex = `1 0 calc(100% / ${size})`; 
     gridItem.style.aspectRatio = "1"; 
 
     gridItem.addEventListener('mouseover', () => changeColor(gridItem));
@@ -47,5 +47,3 @@ function changeColor(element) {
 function restoreColor(element) {
   element.style.backgroundColor = 'white';
 }
-
-
