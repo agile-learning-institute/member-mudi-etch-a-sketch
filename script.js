@@ -38,7 +38,6 @@ function createGrid(size) {
   }
 }
 
-
 // This two functions below changes and restores the grid color when hovering on them
 function changeColor(element) {
   element.style.backgroundColor = 'black';
