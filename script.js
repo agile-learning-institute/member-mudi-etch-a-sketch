@@ -30,3 +30,10 @@ function changeColor(element) {
 function restoreColor(element) {
   element.style.backgroundColor = 'white';
 }
+
+
+const btn = document.createElement("button");
+container.insertBefore(btn, container);
+btn.classList.add("myButton");
+btn.textContent = "Click Me";
+
