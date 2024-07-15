@@ -37,3 +37,7 @@ h1 {
     box-sizing: border-box;
     aspect-ratio: 1;
 }
+
+.grid-item:hover {
+    background-color: black;
+}
