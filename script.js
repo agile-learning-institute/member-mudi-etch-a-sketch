@@ -20,7 +20,6 @@ function createGrid(size) {
     gridItem.style.flex = `1 0 calc(100% / ${size})`; 
 
     gridItem.addEventListener('mouseover', () => changeColor(gridItem));
-    gridItem.addEventListener('mouseout', () => restoreColor(gridItem));
 
     container.appendChild(gridItem);
   }
@@ -29,8 +28,4 @@ function createGrid(size) {
 // This two functions below changes and restores the grid color when hovering on them
 function changeColor(element) {
   element.style.backgroundColor = 'black';
-}
-
-function restoreColor(element) {
-  element.style.backgroundColor = 'white';
 }
