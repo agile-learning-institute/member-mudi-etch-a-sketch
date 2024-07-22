@@ -19,13 +19,15 @@ function createGrid(size) {
     gridItem.classList.add('grid-item');
     gridItem.style.flex = `1 0 calc(100% / ${size})`; 
 
-    gridItem.addEventListener('mouseover', () => changeColor(gridItem));
+    gridItem.addEventListener('click', () => {
+      gridItem.style.backgroundColor = `#${getRandomColor()}`;
+    });
 
     container.appendChild(gridItem);
   }
 }
 
-// This two functions below changes and restores the grid color when hovering on them
-function changeColor(element) {
-  element.style.backgroundColor = 'black';
+
+function getRandomColor() {
+  return Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
 }
