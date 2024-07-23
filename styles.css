@@ -4,7 +4,7 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0;
-    background-color: #0e0101;
+    background-color: #752020;
 }
 
 h1 {
@@ -26,14 +26,14 @@ h1 {
 #container {
     display: flex;
     flex-wrap: wrap;
-    border: 10px solid brown;
+    border: 10px solid black;
     width: 500px;
     height: 500px;
 }
 
 .grid-item {
     background-color: white;
-    border: 5px solid gray;
+    border: 5px solid white;
     box-sizing: border-box;
     aspect-ratio: 1;
 }

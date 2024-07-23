@@ -10,6 +10,8 @@ function displayPopup() {
 
 const container = document.querySelector("#container");
 
+let isMouseDown = false;
+
 // The function below create my Grids dynamically when it is called
 function createGrid(size) {
   container.innerHTML = '';
@@ -19,15 +21,41 @@ function createGrid(size) {
     gridItem.classList.add('grid-item');
     gridItem.style.flex = `1 0 calc(100% / ${size})`; 
 
-    gridItem.addEventListener('click', () => {
-      gridItem.style.backgroundColor = `#${getRandomColor()}`;
+    gridItem.addEventListener('mousedown', () => {
+      isMouseDown = true;
+      changeColor(gridItem);
+    });
+
+    gridItem.addEventListener('mouseover', () => {
+      if (isMouseDown) {
+        changeColor(gridItem);
+      }
+    });
+
+    gridItem.addEventListener('mouseup', () => {
+      isMouseDown = false;
+    });
+
+    gridItem.addEventListener('mouseleave', () => {
+      if (isMouseDown) {
+        changeColor(gridItem);
+      }
     });
 
     container.appendChild(gridItem);
   }
+
+  document.addEventListener('mouseup', () => {
+    isMouseDown = false;
+  });
+}
+
+
+function changeColor(gridItem) {
+  gridItem.style.backgroundColor = `#${getRandomColor()}`;
 }
 
 
 function getRandomColor() {
-  return Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+  return Math.floor(Math.random() * 16849305).toString(16).padStart(6, '0');
 }
