@@ -33,7 +33,7 @@ h1 {
 
 .grid-item {
     background-color: white;
-    border: 5px solid white;
+    border: 4px solid rgba(14, 13, 12, 0.938);
     box-sizing: border-box;
     aspect-ratio: 1;
 }
